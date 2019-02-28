@@ -71,6 +71,42 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBody" runat="server">
 
+    <script type="text/javascript">
+                $(function () {
+                    $('[data-toggle="tooltip"]').tooltip()
+                })
+
+                $(function () {
+                    $('.calendarInput').datetimepicker(
+                        {
+                            format: 'L'
+                        });
+                });
+
+            
+
+
+                //On UpdatePanel Refresh
+                var prm = Sys.WebForms.PageRequestManager.getInstance();
+                if (prm != null) {
+                    prm.add_endRequest(function (sender, e) {
+                        if (sender._postBackSettings.panelsToUpdate != null) {
+
+                            $(function () {
+                                $('.calendarInput').datetimepicker(
+                                    {
+                                        format: 'L'
+                                    });
+                            });
+
+                       
+
+                         
+                         
+                        }
+                    });
+                };
+            </script>
 
     <div class="container container_content">
         <br />
@@ -126,7 +162,27 @@
 
             <div class="col-md-10">
                 <div class="panel panel-success">
-                    <div class="panel-heading">Stock Summary Monitoring: <asp:Label runat="server" ID="lblDeliveryTextTitle"></asp:Label></div>
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-md-4">
+                                Stock Summary Monitoring:
+                            </div>
+                            <div class="col-md-4 col-md-offset-4 text-right">
+                                 <div class="input-group input-group-sm">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar">
+                        </span></span>
+                         <asp:TextBox runat="server" ID="txtSelectedDate" CssClass="calendarInput form-control"></asp:TextBox>
+                        <span class="input-group-btn"><asp:LinkButton runat="server" ID="lnkReviewStock" OnClick="lnkReviewStock_Click" CssClass="btn btn-sm btn-primary">Review</asp:LinkButton></span>
+                        
+                        </div>
+                                
+                            </div>
+                        </div>
+                        
+                       
+                         
+                        
+                        <asp:Label runat="server" ID="lblDeliveryTextTitle" Visible="false"></asp:Label></div>
                     <div class="panel-body">
                          <div class="row">
                              <div class="col-md-4">
@@ -136,7 +192,6 @@
                                          <img src="Images/Icons/open.png" /> 
                                               <asp:Label runat="server" ID="lblFreshOpening"></asp:Label>
                                        
-
                                      </div>
                                      <div class="panel-body bgStat_Chicken">
                                
@@ -144,13 +199,11 @@
                                      </div>
                                      <div class="panel-footer">
                                          <div class="row">
-                                              <div class="col-md-5 text-success">
-                                           <img src="Images/Icons/up.png" /> <asp:Label runat="server" ID="lblFreshIn"></asp:Label></div>
-                                             <div class="col-md-5 text-danger">
-                                           <img src="Images/Icons/down.png" /> <asp:Label runat="server" ID="lblFreshOut"></asp:Label></div>
-                                           <div class="col-md-2">
-                                               <asp:ImageButton runat="server" ID="btnFresh" ImageUrl="~/Images/dash/list.png"  OnClick="btnFresh_Click"/>
-                                           </div>
+                                              <div class="col-md-6 text-success">
+                                           <asp:ImageButton runat="server" ID="imgFreshIn" ImageUrl="~/Images/Icons/up.png" OnClick="imgFreshIn_Click"/> <asp:Label runat="server" ID="lblFreshIn"></asp:Label></div>
+                                             <div class="col-md-6 text-danger">
+                                           <asp:ImageButton runat="server" ID="imgFreshOut" ImageUrl="~/Images/Icons/down.png" OnClick="imgFreshOut_Click"/> <asp:Label runat="server" ID="lblFreshOut"></asp:Label></div> 
+                                         
                                          </div>
                                      </div>
 
@@ -176,13 +229,12 @@
                                      </div>
                                       <div class="panel-footer">
                                          <div class="row">
-                                              <div class="col-md-5 text-success">
-                                            <img src="Images/Icons/up.png" /> <asp:Label runat="server" ID="lblLiempoIn"></asp:Label></div>
-                                             <div class="col-md-5 text-danger">
-                                             <img src="Images/Icons/down.png" /> <asp:Label runat="server" ID="lblLiempoOut"></asp:Label></div>
-                                             <div class="col-md-2">
-                                               <asp:ImageButton runat="server" ID="btnLiempo" ImageUrl="~/Images/dash/list.png"  OnClick="btnLiempo_Click"/>
-                                           </div>
+                                            
+                                             <div class="col-md-6 text-success">
+                                           <asp:ImageButton runat="server" ID="imgLiempoIn" ImageUrl="~/Images/Icons/up.png" OnClick="imgLiempoIn_Click"/> <asp:Label runat="server" ID="lblLiempoIn"></asp:Label></div>
+                                             <div class="col-md-6 text-danger">
+                                           <asp:ImageButton runat="server" ID="imgLiempoOut" ImageUrl="~/Images/Icons/down.png" OnClick="imgLiempoOut_Click"/> <asp:Label runat="server" ID="lblLiempoOut"></asp:Label></div> 
+                                           
                                          </div>
                                      </div>
                                  </div>
@@ -200,13 +252,11 @@
                                      </div>
                                       <div class="panel-footer">
                                          <div class="row">
-                                              <div class="col-md-5 text-success">
-                                            <img src="Images/Icons/up.png" /> <asp:Label runat="server" ID="lblAtsara100In"></asp:Label></div>
-                                             <div class="col-md-5 text-danger">
-                                             <img src="Images/Icons/down.png" /> <asp:Label runat="server" ID="lblAtsara100Out"></asp:Label></div>
-                                              <div class="col-md-2">
-                                               <asp:ImageButton runat="server" ID="btnAtsara100" ImageUrl="~/Images/dash/list.png"  OnClick="btnAtsara100_Click"/>
-                                           </div>
+                                            
+                                             <div class="col-md-6 text-success">
+                                           <asp:ImageButton runat="server" ID="imgAtsara100In" ImageUrl="~/Images/Icons/up.png" OnClick="imgAtsara100In_Click"/> <asp:Label runat="server" ID="lblAtsara100In"></asp:Label></div>
+                                             <div class="col-md-6 text-danger">
+                                           <asp:ImageButton runat="server" ID="imgAtsara100Out" ImageUrl="~/Images/Icons/down.png" OnClick="imgAtsara100Out_Click"/> <asp:Label runat="server" ID="lblAtsara100Out"></asp:Label></div> 
                                          </div>
                                      </div>
                                  </div>
@@ -224,13 +274,12 @@
                                      </div>
                                       <div class="panel-footer">
                                          <div class="row">
-                                              <div class="col-md-5 text-success">
-                                            <img src="Images/Icons/up.png" /> <asp:Label runat="server" ID="lblFrozenIn"></asp:Label></div>
-                                             <div class="col-md-5 text-danger">
-                                             <img src="Images/Icons/down.png" /> <asp:Label runat="server" ID="lblFrozenOut"></asp:Label></div>
-                                             <div class="col-md-2">
-                                               <asp:ImageButton runat="server" ID="btnFrozen" ImageUrl="~/Images/dash/list.png"  OnClick="btnFrozen_Click"/>
-                                           </div>
+                                            
+
+                                             <div class="col-md-6 text-success">
+                                           <asp:ImageButton runat="server" ID="imgFrozenIn" ImageUrl="~/Images/Icons/up.png" OnClick="imgFrozenIn_Click"/> <asp:Label runat="server" ID="lblFrozenIn"></asp:Label></div>
+                                             <div class="col-md-6 text-danger">
+                                           <asp:ImageButton runat="server" ID="imgFrozenOut" ImageUrl="~/Images/Icons/down.png" OnClick="imgFrozenOut_Click"/> <asp:Label runat="server" ID="lblFrozenOut"></asp:Label></div>
                                          </div>
                                      </div>
                                  </div>
@@ -247,13 +296,11 @@
                                      </div>
                                       <div class="panel-footer">
                                          <div class="row">
-                                              <div class="col-md-5 text-success">
-                                            <img src="Images/Icons/up.png" /> <asp:Label runat="server" ID="lblLeegIn"></asp:Label></div>
-                                             <div class="col-md-5 text-danger">
-                                             <img src="Images/Icons/down.png" /> <asp:Label runat="server" ID="lblLeegOut"></asp:Label></div>
-                                             <div class="col-md-2">
-                                               <asp:ImageButton runat="server" ID="btnLeeg" ImageUrl="~/Images/dash/list.png"  OnClick="btnLeeg_Click"/>
-                                           </div>
+                                            
+                                             <div class="col-md-6 text-success">
+                                           <asp:ImageButton runat="server" ID="imgLeegIn" ImageUrl="~/Images/Icons/up.png" OnClick="imgLeegIn_Click"/> <asp:Label runat="server" ID="lblLeegIn"></asp:Label></div>
+                                             <div class="col-md-6 text-danger">
+                                           <asp:ImageButton runat="server" ID="imgLeegOut" ImageUrl="~/Images/Icons/down.png" OnClick="imgLeegOut_Click"/> <asp:Label runat="server" ID="lblLeegOut"></asp:Label></div>
                                          </div>
                                      </div>
                                  </div>
@@ -273,33 +320,107 @@
                                      </div>
                                       <div class="panel-footer">
                                          <div class="row">
-                                              <div class="col-md-5 text-success">
-                                            <img src="Images/Icons/up.png" /> <asp:Label runat="server" ID="lblAtsara160In"></asp:Label></div>
-                                             <div class="col-md-5 text-danger">
-                                             <img src="Images/Icons/down.png" /> <asp:Label runat="server" ID="lblAtsara160Out"></asp:Label></div>
-                                             <div class="col-md-2">
-                                               <asp:ImageButton runat="server" ID="btnAtsara160" ImageUrl="~/Images/dash/list.png"  OnClick="btnAtsara160_Click"/>
-                                           </div>
+                                            
+                                              <div class="col-md-6 text-success">
+                                           <asp:ImageButton runat="server" ID="imgAtsara160In" ImageUrl="~/Images/Icons/up.png" OnClick="imgAtsara160In_Click"/> <asp:Label runat="server" ID="lblAtsara160In"></asp:Label></div>
+                                             <div class="col-md-6 text-danger">
+                                           <asp:ImageButton runat="server" ID="imgAtsara160Out" ImageUrl="~/Images/Icons/down.png" OnClick="imgAtsara160Out_Click"/> <asp:Label runat="server" ID="lblAtsara160Out"></asp:Label></div>
                                          </div>
                                          
                                      </div>
                                  </div>
                              </div>
+                           
+
+
                          </div>
+                          <br />
+
+                               <!-- STORAGE STOCK LIST -->
+                <div class="panel panel-warning">
+                    <div class="panel-heading">STORAGE STOCK LIST</div>
+                    <div class="panel-body">
+                        <asp:GridView runat="server" ID="gvStorageStockList" AutoGenerateColumns="false" CssClass="table table-responsive table-hover table-condensed" OnRowDataBound="gvStorageStockList_RowDataBound">
+                            <Columns>
+                                <asp:BoundField DataField="StorageCode" HeaderStyle-CssClass="hidden" ItemStyle-CssClass="hidden" />
+                                <asp:BoundField DataField="ItemCode" HeaderStyle-CssClass="hidden" ItemStyle-CssClass="hidden" />
+                                <asp:BoundField DataField="StorageName" HeaderText="Storage" />
+                                <asp:BoundField DataField="ItemName" HeaderText="Item" />
+                                <asp:TemplateField HeaderText="Opening" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center" ItemStyle-Font-Bold="true">
+                                    <ItemTemplate>
+                                        <asp:Label runat="server" ID="lblOpening"></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                 <asp:TemplateField HeaderText="Stock In" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center text-success">
+                                    <ItemTemplate>
+                                        <asp:Label runat="server" ID="lblStockIn"></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                 <asp:TemplateField HeaderText="Stock Out" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center text-danger">
+                                    <ItemTemplate>
+                                        <asp:Label runat="server" ID="lblStockOut"></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+
+                                 <asp:TemplateField HeaderText="Branch Return" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center text-success">
+                                    <ItemTemplate>
+                                        <asp:Label runat="server" ID="lblBranchReturn"></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+
+                                 <asp:TemplateField HeaderText="Pick Up" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center text-danger">
+                                    <ItemTemplate>
+                                        <asp:Label runat="server" ID="lblPickUp"></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+
+                                <asp:TemplateField HeaderText="Adj In" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center text-success">
+                                    <ItemTemplate>
+                                        <asp:Label runat="server" ID="lblAdjIn"></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+
+                                <asp:TemplateField HeaderText="Adj Out" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center text-danger">
+                                    <ItemTemplate>
+                                        <asp:Label runat="server" ID="lblAdjOut"></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+
+                                 <asp:TemplateField HeaderText="Trans In" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center text-success">
+                                    <ItemTemplate>
+                                        <asp:Label runat="server" ID="lblTransIn"></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Trans Out" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center text-danger">
+                                    <ItemTemplate>
+                                        <asp:Label runat="server" ID="lblTransOut"></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+
+                                <asp:TemplateField HeaderText="Current Stock" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center text-success" ItemStyle-Font-Bold="true">
+                                    <ItemTemplate>
+                                        <asp:Label runat="server" ID="lblCurrentStock"></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+
+                            </Columns>
+                        </asp:GridView>
                     </div>
                 </div>
-
+                    </div>
+                </div>
+               
                
                 
                         <!--MESSAGE MODAL SECTION-->
 
         <!--Create Update Container -->
-        <div class="modal fade" id="ItemContainer" data-backdrop="static" tabindex="-1" role="dialog">
+        <div class="modal fade" id="ItemContainerIn" data-backdrop="static" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header bg-warning">
                     <button class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title"><asp:Label runat="server" ID="lblActionTitle"></asp:Label></h4>
+                    <h4 class="modal-title"><asp:Label runat="server" ID="lblActionTitle">STOCK - IN</asp:Label></h4>
                 </div>
 
                 <div class="modal-body">
@@ -309,16 +430,16 @@
                  
                   <div class="panel panel-primary">
                     <div class="panel-heading">
-                       <asp:Label runat="server" ID="lblItemName">Fresh Chicken</asp:Label>
+                       <asp:Label runat="server" ID="lblItemNameIn"></asp:Label>
                     </div>
                     <div class="panel-body">
                         <asp:Panel runat="server" ID="panelItemTransaction" ScrollBars="Vertical" Height="500px">
-                            <asp:GridView runat="Server" ID="gvRunningItem" AutoGenerateColumns="false" CssClass="table table-condensed small" FooterStyle-CssClass="hidden" GridLines="None" AlternatingRowStyle-CssClass="bg-info">
+                            <asp:GridView runat="Server" ID="gvRunningItemIn" AutoGenerateColumns="false" CssClass="table table-condensed small" FooterStyle-CssClass="hidden" GridLines="None" AlternatingRowStyle-CssClass="bg-info">
                                             <Columns>
                                         
                                                 <asp:BoundField  DataField="ReferenceText" HeaderText="Source"/>
-                                                <asp:BoundField DataField="In_Stock" HeaderText="IN" DataFormatString="{0:##,###,###}" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center text-success" />
-                                                <asp:BoundField DataField="Out_Stock" HeaderText="OUT" DataFormatString="{0:-##,###,###}" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center text-danger" />
+                                                <asp:BoundField DataField="Quantity" HeaderText="IN" DataFormatString="{0:##,###,###}" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center text-success" />
+                                               <%-- <asp:BoundField DataField="Quantity" HeaderText="OUT" DataFormatString="{0:-##,###,###}" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center text-danger" />--%>
                                            
                                             </Columns>
                                         </asp:GridView>
@@ -337,6 +458,59 @@
                 <div class="modal-footer">
                   
                 <asp:LinkButton runat="server" ID="lnkClose" CssClass="btn btn-danger btn-sm" data-dismiss="modal">Close</asp:LinkButton>
+
+                </div>
+
+            </div>
+            </div>
+
+          
+       </div>
+
+        <!-- Stock Out Display container -->
+         <div class="modal fade" id="ItemContainerOut" data-backdrop="static" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header bg-warning">
+                    <button class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"><asp:Label runat="server" ID="lblActionTitleOut">STOCK - OUT</asp:Label></h4>
+                </div>
+
+                <div class="modal-body">
+
+                    <!-- Logs of Item Transaction -->
+                <div class="row">
+                 
+                  <div class="panel panel-primary">
+                    <div class="panel-heading">
+                       <asp:Label runat="server" ID="lblItemNameOut"></asp:Label>
+                    </div>
+                    <div class="panel-body">
+                        <asp:Panel runat="server" ID="panel1" ScrollBars="Vertical" Height="500px">
+                            <asp:GridView runat="Server" ID="gvRunningItemOut" AutoGenerateColumns="false" CssClass="table table-condensed small" FooterStyle-CssClass="hidden" GridLines="None" AlternatingRowStyle-CssClass="bg-info">
+                                            <Columns>
+                                        
+                                                <asp:BoundField  DataField="ReferenceText" HeaderText="Source"/>
+                                                <%--<asp:BoundField DataField="Quantity" HeaderText="Out" DataFormatString="{0:##,###,###}" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center text-success" />--%>
+                                                <asp:BoundField DataField="Quantity" HeaderText="OUT" DataFormatString="{0:-##,###,###}" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center text-danger" />
+                                           
+                                            </Columns>
+                                        </asp:GridView>
+
+
+
+                        </asp:Panel>
+
+                    </div>
+                </div>
+                       
+                </div>
+              
+              </div>
+
+                <div class="modal-footer">
+                  
+                <asp:LinkButton runat="server" ID="LinkButton1" CssClass="btn btn-danger btn-sm" data-dismiss="modal">Close</asp:LinkButton>
 
                 </div>
 
@@ -365,8 +539,8 @@
                                 <asp:BoundField DataField="ItemName" HeaderText="Item"/>
                                 <asp:BoundField DataField="Opening" HeaderText="Opening" DataFormatString="{0:##,###,###}" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-right" />
                               <%--  <asp:BoundField DataField="Running_Stock" HeaderText="Running" DataFormatString="{0:##,###,###}" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-right" />--%>
-                                <asp:BoundField DataField="Stock_In" HeaderText ="(+)IN" DataFormatString="{0:##,###,###}" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center text-success"  />
-                                <asp:BoundField DataField="Stock_Out" HeaderText ="(-)OUT" DataFormatString="{0:-##,###,###}" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center text-danger" />
+                                <%--<asp:BoundField DataField="Stock_In" HeaderText ="(+)IN" DataFormatString="{0:##,###,###}" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center text-success"  />--%>
+                                <asp:BoundField DataField="Quantity" HeaderText ="(-)OUT" DataFormatString="{0:-##,###,###}" HeaderStyle-CssClass="text-center" ItemStyle-CssClass="text-center text-danger" />
                                 <asp:BoundField DataField="Ending" HeaderText="Remaining"  DataFormatString="{0:##,###,###}" HeaderStyle-CssClass="text-right" ItemStyle-CssClass="text-right"/>
                             </Columns>
                         </asp:GridView>
@@ -419,32 +593,7 @@
             </div>
 
 
-         <%--   <div class="col-md-4 small">
-                <div class="panel panel-warning">
-                    <div class="panel-heading">
-                        Item Running Transaction
-                    </div>
-                    <div class="panel-body">
-
-                        <asp:Panel runat="server" ID="panDeliveryToday" Height="500px" ScrollBars="Vertical">
-                            <asp:GridView runat="Server" ID="gvDeliverySchedule" AutoGenerateColumns="false" CssClass="table table-condensed">
-                                <Columns>
-                                    <asp:BoundField ReadOnly="true" DataField="DRNum" HeaderText="DR #" />
-                                    <asp:BoundField ReadOnly="true" DataField="BranchName" HeaderText="Branch" />
-                                    <asp:BoundField ReadOnly="true" DataField="LACode" HeaderText="Area" />
-                                    <asp:BoundField ReadOnly="true" DataField="TotalQty" HeaderText="Total Qty" />
-                                </Columns>
-                            </asp:GridView>
-
-
-                        </asp:Panel>
-
-
-
-                    </div>
-                </div>
-
-            </div>--%>
+    
 
 
         </div>

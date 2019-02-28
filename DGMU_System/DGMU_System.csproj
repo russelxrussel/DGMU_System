@@ -187,6 +187,10 @@
     <Content Include="bootstrap\js\typeahead.min.js" />
     <Content Include="bootstrap\js\validation_X.js" />
     <Content Include="bootstrap\js\validation_X.txt" />
+    <Content Include="BranchBeginningStock.aspx" />
+    <Content Include="BranchStockAdjustmentEntry.aspx" />
+    <Content Include="BranchSalesVoiding.aspx" />
+    <Content Include="BranchSalesPosting.aspx" />
     <Content Include="Content\CheckBStyle.css" />
     <Content Include="DeliveryReceipt_Final_X.aspx" />
     <Content Include="DeliveryReceipt_Final.aspx" />
@@ -210,10 +214,16 @@
     <Content Include="Images\Icons\opening3.png" />
     <Content Include="Images\user_authentication_01.png" />
     <Content Include="Images\user_authentication_02.png" />
+    <Content Include="BranchInventory.aspx" />
+    <Content Include="BranchSalesEntry.aspx" />
     <Content Include="PickTransfer_Distribution.aspx" />
     <Content Include="Pictures\add-inventory.png" />
     <Content Include="Pictures\Artboard-2-copy-5DL-Icons-300x300.png" />
     <Content Include="Pictures\ghnw20131025-115414-673.jpg" />
+    <Content Include="repBranchSalesSummaryFinal.aspx" />
+    <Content Include="repBranchDeliverySummaryFinal.aspx" />
+    <Content Include="repDirectReceivingSummary.aspx" />
+    <Content Include="repPickup.aspx" />
     <Content Include="repCheckPayment.aspx" />
     <Content Include="repBeginning_Ending_Inventory_Summary.aspx" />
     <Content Include="repDirectReceive.aspx" />
@@ -420,6 +430,34 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\AuthConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BranchBeginningStock.aspx.cs">
+      <DependentUpon>BranchBeginningStock.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BranchBeginningStock.aspx.designer.cs">
+      <DependentUpon>BranchBeginningStock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchStockAdjustmentEntry.aspx.cs">
+      <DependentUpon>BranchStockAdjustmentEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BranchStockAdjustmentEntry.aspx.designer.cs">
+      <DependentUpon>BranchStockAdjustmentEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSalesVoiding.aspx.cs">
+      <DependentUpon>BranchSalesVoiding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BranchSalesVoiding.aspx.designer.cs">
+      <DependentUpon>BranchSalesVoiding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSalesPosting.aspx.cs">
+      <DependentUpon>BranchSalesPosting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BranchSalesPosting.aspx.designer.cs">
+      <DependentUpon>BranchSalesPosting.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DeliveryReceipt_Final_X.aspx.cs">
       <DependentUpon>DeliveryReceipt_Final_X.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -441,12 +479,96 @@
     <Compile Include="DGMULogin.aspx.designer.cs">
       <DependentUpon>DGMULogin.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BranchInventory.aspx.cs">
+      <DependentUpon>BranchInventory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BranchInventory.aspx.designer.cs">
+      <DependentUpon>BranchInventory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BranchSalesEntry.aspx.cs">
+      <DependentUpon>BranchSalesEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BranchSalesEntry.aspx.designer.cs">
+      <DependentUpon>BranchSalesEntry.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PickTransfer_Distribution.aspx.cs">
       <DependentUpon>PickTransfer_Distribution.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PickTransfer_Distribution.aspx.designer.cs">
       <DependentUpon>PickTransfer_Distribution.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="repBranchSalesSummaryFinal.aspx.cs">
+      <DependentUpon>repBranchSalesSummaryFinal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="repBranchSalesSummaryFinal.aspx.designer.cs">
+      <DependentUpon>repBranchSalesSummaryFinal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="repBranchDeliverySummaryFinal.aspx.cs">
+      <DependentUpon>repBranchDeliverySummaryFinal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="repBranchDeliverySummaryFinal.aspx.designer.cs">
+      <DependentUpon>repBranchDeliverySummaryFinal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="repDirectReceivingSummary.aspx.cs">
+      <DependentUpon>repDirectReceivingSummary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="repDirectReceivingSummary.aspx.designer.cs">
+      <DependentUpon>repDirectReceivingSummary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\BranchSalesSummary_PerBranch_FINAL.cs">
+      <DependentUpon>BranchSalesSummary_PerBranch_FINAL.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\BranchSalesSummary_FINAL.cs">
+      <DependentUpon>BranchSalesSummary_FINAL.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\BranchDeliverySummary_PerBranch_FINAL.cs">
+      <DependentUpon>BranchDeliverySummary_PerBranch_FINAL.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\BranchDeliverySummary_FINAL.cs">
+      <DependentUpon>BranchDeliverySummary_FINAL.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\Direct_Receive_Supplier_Summary.cs">
+      <DependentUpon>Direct_Receive_Supplier_Summary.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\Direct_Receive_Summary.cs">
+      <DependentUpon>Direct_Receive_Summary.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\Inventory_Opening_Ending_Stock.cs">
+      <DependentUpon>Inventory_Opening_Ending_Stock.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="repPickup.aspx.cs">
+      <DependentUpon>repPickup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="repPickup.aspx.designer.cs">
+      <DependentUpon>repPickup.aspx</DependentUpon>
     </Compile>
     <Compile Include="repCheckPayment.aspx.cs">
       <DependentUpon>repCheckPayment.aspx</DependentUpon>
@@ -489,6 +611,18 @@
     </Compile>
     <Compile Include="repDeliveryScheduleList.aspx.designer.cs">
       <DependentUpon>repDeliveryScheduleList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\DeliveryPickUp.cs">
+      <DependentUpon>DeliveryPickUp.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\DeliveryScheduleList_Reciept_Final_V2.cs">
+      <DependentUpon>DeliveryScheduleList_Reciept_Final_V2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Reports\DeliverySummary_Partners_ALL.cs">
       <AutoGen>True</AutoGen>
@@ -937,6 +1071,22 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Reports\BranchSalesSummary_PerBranch_FINAL.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BranchSalesSummary_PerBranch_FINAL.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\BranchSalesSummary_FINAL.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BranchSalesSummary_FINAL.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\BranchDeliverySummary_PerBranch_FINAL.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BranchDeliverySummary_PerBranch_FINAL.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\BranchDeliverySummary_FINAL.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BranchDeliverySummary_FINAL.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\CheckPayment.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CheckPayment.cs</LastGenOutput>
@@ -945,9 +1095,25 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>BranchAreaLocationList.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\DeliveryPickUp.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DeliveryPickUp.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\DeliveryScheduleList_Reciept_Final_V2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DeliveryScheduleList_Reciept_Final_V2.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\DeliverySummary_Partners_ALL.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>DeliverySummary_Partners_ALL.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Direct_Receive_Supplier_Summary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Direct_Receive_Supplier_Summary.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Direct_Receive_Summary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Direct_Receive_Summary.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Direct_Receive_Receipt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -976,6 +1142,10 @@
     <EmbeddedResource Include="Reports\Delivery_Location_Summary_Breakdown_Daily.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Delivery_Location_Summary_Breakdown_Daily.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Inventory_Opening_Ending_Stock.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Inventory_Opening_Ending_Stock.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Inventory_Beginning_Ending.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

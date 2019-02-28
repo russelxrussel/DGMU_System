@@ -60,6 +60,716 @@ namespace DGMU_System
 
             return dt;
         }
+        #region "Stock Display Quick View"
+        /*02-18-2019
+        Storage Stock List Quick view
+        */
+
+        public double GET_OPENING_ALL_STORAGE_STOCK(DateTime _dateSelected, string _itemCode)
+        {
+            double x;
+
+            using (SqlConnection cn = new SqlConnection(CS))
+            {
+
+                using (SqlCommand cmd = new SqlCommand("[Inventory].[spGET_ALL_STORAGE_STOCK_OPENING]", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@DATE_SELECTED", _dateSelected);
+                    cmd.Parameters.AddWithValue("@ITEMCODE", _itemCode);
+
+                    cn.Open();
+
+                    x = (double)cmd.ExecuteScalar();
+
+                }
+                return x;
+            }
+
+        }
+        public double GET_STORAGE_ALL_STOCK_PER_DAY(DateTime _dateSelected, string _itemCode)
+        {
+            double x;
+
+            using (SqlConnection cn = new SqlConnection(CS))
+            {
+
+                using (SqlCommand cmd = new SqlCommand("[Inventory].[spGET_STORAGE_ALL_STOCK_PER_DAY]", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@DATE_SELECTED", _dateSelected);
+                    cmd.Parameters.AddWithValue("@ITEMCODE", _itemCode);
+
+                    cn.Open();
+
+                    x = (double)cmd.ExecuteScalar();
+
+                }
+                return x;
+            }
+
+        }
+
+        public double GET_STORAGE_ALL_STOCK_IN_PER_DAY(DateTime _dateFrom, DateTime _dateTo, string _itemCode)
+        {
+            double x;
+
+            using (SqlConnection cn = new SqlConnection(CS))
+            {
+
+                using (SqlCommand cmd = new SqlCommand("[Inventory].[spGET_STORAGE_ALL_STOCK_IN_PER_DAY]", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@DATE_FROM", _dateFrom);
+                    cmd.Parameters.AddWithValue("@DATE_TO", _dateTo);
+                    cmd.Parameters.AddWithValue("@ITEMCODE", _itemCode);
+
+                    cn.Open();
+
+                    x = (double)cmd.ExecuteScalar();
+
+                }
+                return x;
+            }
+
+        }
+        public double GET_STORAGE_ALL_STOCK_OUT_PER_DAY(DateTime _dateFrom, DateTime _dateTo, string _itemCode)
+        {
+            double x;
+
+            using (SqlConnection cn = new SqlConnection(CS))
+            {
+
+                using (SqlCommand cmd = new SqlCommand("[Inventory].[spGET_STORAGE_ALL_STOCK_OUT_PER_DAY]", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@DATE_FROM", _dateFrom);
+                    cmd.Parameters.AddWithValue("@DATE_TO", _dateTo);
+                    cmd.Parameters.AddWithValue("@ITEMCODE", _itemCode);
+
+                    cn.Open();
+
+                    x = (double)cmd.ExecuteScalar();
+
+                }
+                return x;
+            }
+
+        }
+
+        public DataTable GET_STORAGE_STOCK_LIST()
+        {
+            DataTable dt = new DataTable();
+            dt = queryCommandDT_StoredProc("[Inventory].[spGET_STORAGE_STOCK_LIST]");
+            return dt;
+        }
+
+        public double GET_OPENING_STOCK(DateTime _dateSelected, string _storageCode, string _itemCode)
+        {
+            double x;
+
+            using (SqlConnection cn = new SqlConnection(CS))
+            {
+
+                using (SqlCommand cmd = new SqlCommand("[Inventory].[spGET_STORAGE_STOCK_OPENING]", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@DATE_SELECTED", _dateSelected);
+                    cmd.Parameters.AddWithValue("@STORAGECODE", _storageCode);
+                    cmd.Parameters.AddWithValue("@ITEMCODE", _itemCode);
+
+                    cn.Open();
+
+                    x = (double)cmd.ExecuteScalar();
+
+                }
+                return x;
+            }
+
+        }
+
+        public double GET_STOCK_IN_STOCK(DateTime _dateFrom, DateTime _dateTo, string _storageCode, string _itemCode)
+        {
+            double x;
+
+            using (SqlConnection cn = new SqlConnection(CS))
+            {
+
+                using (SqlCommand cmd = new SqlCommand("[Inventory].[spGET_STORAGE_STOCK_IN]", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@DATE_FROM", _dateFrom);
+                    cmd.Parameters.AddWithValue("@DATE_TO", _dateTo);
+                    cmd.Parameters.AddWithValue("@STORAGECODE", _storageCode);
+                    cmd.Parameters.AddWithValue("@ITEMCODE", _itemCode);
+
+                    cn.Open();
+
+                    x = (double)cmd.ExecuteScalar();
+
+                }
+                return x;
+            }
+
+        }
+
+        public double GET_STOCK_OUT_STOCK(DateTime _dateFrom, DateTime _dateTo, string _storageCode, string _itemCode)
+        {
+            double x;
+
+            using (SqlConnection cn = new SqlConnection(CS))
+            {
+
+                using (SqlCommand cmd = new SqlCommand("[Inventory].[spGET_STORAGE_STOCK_OUT]", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@DATE_FROM", _dateFrom);
+                    cmd.Parameters.AddWithValue("@DATE_TO", _dateTo);
+                    cmd.Parameters.AddWithValue("@STORAGECODE", _storageCode);
+                    cmd.Parameters.AddWithValue("@ITEMCODE", _itemCode);
+
+                    cn.Open();
+
+                    x = (double)cmd.ExecuteScalar();
+
+                }
+
+                return x;
+            }
+
+        }
+
+        public double GET_STOCK_BRANCH_RETURN(DateTime _dateFrom, DateTime _dateTo, string _storageCode, string _itemCode)
+        {
+            double x;
+
+            using (SqlConnection cn = new SqlConnection(CS))
+            {
+
+                using (SqlCommand cmd = new SqlCommand("[Inventory].[spGET_STORAGE_BRANCH_RETURN]", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@DATE_FROM", _dateFrom);
+                    cmd.Parameters.AddWithValue("@DATE_TO", _dateTo);
+                    cmd.Parameters.AddWithValue("@STORAGECODE", _storageCode);
+                    cmd.Parameters.AddWithValue("@ITEMCODE", _itemCode);
+
+                    cn.Open();
+
+                    x = (double)cmd.ExecuteScalar();
+
+                }
+
+                return x;
+            }
+
+        }
+
+        public double GET_STOCK_PICK_UP(DateTime _dateFrom, DateTime _dateTo, string _storageCode, string _itemCode)
+        {
+            double x;
+
+            using (SqlConnection cn = new SqlConnection(CS))
+            {
+
+                using (SqlCommand cmd = new SqlCommand("[Inventory].[spGET_STORAGE_PICK_UP]", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@DATE_FROM", _dateFrom);
+                    cmd.Parameters.AddWithValue("@DATE_TO", _dateTo);
+                    cmd.Parameters.AddWithValue("@STORAGECODE", _storageCode);
+                    cmd.Parameters.AddWithValue("@ITEMCODE", _itemCode);
+
+                    cn.Open();
+
+                    x = (double)cmd.ExecuteScalar();
+
+                }
+
+                return x;
+            }
+
+        }
+
+        public double GET_STOCK_ADJ_IN(DateTime _dateFrom, DateTime _dateTo, string _storageCode, string _itemCode)
+        {
+            double x;
+
+            using (SqlConnection cn = new SqlConnection(CS))
+            {
+
+                using (SqlCommand cmd = new SqlCommand("[Inventory].[spGET_STORAGE_ADJ_IN]", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@DATE_FROM", _dateFrom);
+                    cmd.Parameters.AddWithValue("@DATE_TO", _dateTo);
+                    cmd.Parameters.AddWithValue("@STORAGECODE", _storageCode);
+                    cmd.Parameters.AddWithValue("@ITEMCODE", _itemCode);
+
+                    cn.Open();
+
+                    x = (double)cmd.ExecuteScalar();
+
+                }
+
+                return x;
+            }
+
+        }
+
+        public double GET_STOCK_ADJ_OUT(DateTime _dateFrom, DateTime _dateTo, string _storageCode, string _itemCode)
+        {
+            double x;
+
+            using (SqlConnection cn = new SqlConnection(CS))
+            {
+
+                using (SqlCommand cmd = new SqlCommand("[Inventory].[spGET_STORAGE_ADJ_OUT]", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@DATE_FROM", _dateFrom);
+                    cmd.Parameters.AddWithValue("@DATE_TO", _dateTo);
+                    cmd.Parameters.AddWithValue("@STORAGECODE", _storageCode);
+                    cmd.Parameters.AddWithValue("@ITEMCODE", _itemCode);
+
+                    cn.Open();
+
+                    x = (double)cmd.ExecuteScalar();
+
+                }
+
+                return x;
+            }
+
+        }
+
+        public double GET_STOCK_TRANSFER_IN(DateTime _dateFrom, DateTime _dateTo, string _storageCode, string _itemCode)
+        {
+            double x;
+
+            using (SqlConnection cn = new SqlConnection(CS))
+            {
+
+                using (SqlCommand cmd = new SqlCommand("[Inventory].[spGET_STORAGE_TRANSFER_IN]", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@DATE_FROM", _dateFrom);
+                    cmd.Parameters.AddWithValue("@DATE_TO", _dateTo);
+                    cmd.Parameters.AddWithValue("@STORAGECODE", _storageCode);
+                    cmd.Parameters.AddWithValue("@ITEMCODE", _itemCode);
+
+                    cn.Open();
+
+                    x = (double)cmd.ExecuteScalar();
+
+                }
+
+                return x;
+            }
+
+        }
+
+        public double GET_STOCK_TRANSFER_OUT(DateTime _dateFrom, DateTime _dateTo, string _storageCode, string _itemCode)
+        {
+            double x;
+
+            using (SqlConnection cn = new SqlConnection(CS))
+            {
+
+                using (SqlCommand cmd = new SqlCommand("[Inventory].[spGET_STORAGE_TRANSFER_OUT]", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@DATE_FROM", _dateFrom);
+                    cmd.Parameters.AddWithValue("@DATE_TO", _dateTo);
+                    cmd.Parameters.AddWithValue("@STORAGECODE", _storageCode);
+                    cmd.Parameters.AddWithValue("@ITEMCODE", _itemCode);
+
+                    cn.Open();
+
+                    x = (double)cmd.ExecuteScalar();
+
+                }
+
+                return x;
+            }
+
+        }
+
+
+
+
+        #endregion
+
+
+        #region "BRANCH INVENTORY DETAILS"
+
+        public DataTable GET_BRANCH_INVENTORY_DETAILS(string _itemCode)
+        {
+            
+            DataTable dt = new DataTable();
+            using (SqlConnection cn = new SqlConnection(CS))
+            {
+                using (SqlCommand cmd = new SqlCommand("[Inventory].[spGET_BRANCH_ITEM_DETAILS]", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@ITEMCODE", _itemCode);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dt);
+                }
+            }
+
+            return dt;
+        }
+
+        public double GET_BRANCH_STOCK_OPENING(DateTime _dateSelected, string _branchCode, string _itemCode)
+        {
+            double x;
+
+            using (SqlConnection cn = new SqlConnection(CS))
+            {
+
+                using (SqlCommand cmd = new SqlCommand("[Inventory].[spGET_BRANCH_STOCK_OPENING]", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@DATE_SELECTED", _dateSelected);
+                    cmd.Parameters.AddWithValue("@BRANCHCODE", _branchCode);
+                    cmd.Parameters.AddWithValue("@ITEMCODE", _itemCode);
+
+                    cn.Open();
+
+                    x = (double)cmd.ExecuteScalar();
+
+                }
+
+                return x;
+            }
+
+        }
+        public double GET_BRANCH_STOCK_IN(DateTime _dateSelected, string _branchCode, string _itemCode)
+        {
+            double x;
+
+            using (SqlConnection cn = new SqlConnection(CS))
+            {
+
+                using (SqlCommand cmd = new SqlCommand("[Inventory].[spGET_BRANCH_STOCK_IN]", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@DATE_SELECTED", _dateSelected);
+                    cmd.Parameters.AddWithValue("@BRANCHCODE", _branchCode);
+                    cmd.Parameters.AddWithValue("@ITEMCODE", _itemCode);
+
+                    cn.Open();
+
+                    x = (double)cmd.ExecuteScalar();
+
+                }
+
+                return x;
+            }
+
+        }
+        public double GET_BRANCH_STOCK_OUT(DateTime _dateSelected, string _branchCode, string _itemCode)
+        {
+            double x;
+
+            using (SqlConnection cn = new SqlConnection(CS))
+            {
+
+                using (SqlCommand cmd = new SqlCommand("[Inventory].[spGET_BRANCH_STOCK_OUT]", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@DATE_SELECTED", _dateSelected);
+                    cmd.Parameters.AddWithValue("@BRANCHCODE", _branchCode);
+                    cmd.Parameters.AddWithValue("@ITEMCODE", _itemCode);
+
+                    cn.Open();
+
+                    x = (double)cmd.ExecuteScalar();
+
+                }
+
+                return x;
+            }
+
+        }
+
+        public double GET_BRANCH_ADJ_IN(DateTime _dateSelected, string _branchCode, string _itemCode)
+        {
+            double x;
+
+            using (SqlConnection cn = new SqlConnection(CS))
+            {
+
+                using (SqlCommand cmd = new SqlCommand("[Inventory].[spGET_BRANCH_ADJ_IN]", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@DATE_SELECTED", _dateSelected);
+                    cmd.Parameters.AddWithValue("@BRANCHCODE", _branchCode);
+                    cmd.Parameters.AddWithValue("@ITEMCODE", _itemCode);
+
+                    cn.Open();
+
+                    x = (double)cmd.ExecuteScalar();
+
+                }
+
+                return x;
+            }
+
+        }
+
+        public double GET_BRANCH_ADJ_OUT(DateTime _dateSelected, string _branchCode, string _itemCode)
+        {
+            double x;
+
+            using (SqlConnection cn = new SqlConnection(CS))
+            {
+
+                using (SqlCommand cmd = new SqlCommand("[Inventory].[spGET_BRANCH_ADJ_OUT]", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@DATE_SELECTED", _dateSelected);
+                    cmd.Parameters.AddWithValue("@BRANCHCODE", _branchCode);
+                    cmd.Parameters.AddWithValue("@ITEMCODE", _itemCode);
+
+                    cn.Open();
+
+                    x = (double)cmd.ExecuteScalar();
+
+                }
+
+                return x;
+            }
+
+        }
+
+        public double GET_BRANCH_AVAILABLE_STOCK(DateTime _dateSelected, string _branchCode, string _itemCode)
+        {
+            double x;
+
+            using (SqlConnection cn = new SqlConnection(CS))
+            {
+
+                using (SqlCommand cmd = new SqlCommand("[Inventory].[spGET_BRANCH_AVAILABLE_STOCK]", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@DATE_SELECTED", _dateSelected);
+                    cmd.Parameters.AddWithValue("@BRANCHCODE", _branchCode);
+                    cmd.Parameters.AddWithValue("@ITEMCODE", _itemCode);
+
+                    cn.Open();
+
+                    x = (double)cmd.ExecuteScalar();
+
+                }
+
+                return x;
+            }
+
+        }
+
+
+
+        //BRANCH SALE DATA
+        public DataTable GET_BRANCH_SALES_FOR_POSTING()
+        {
+            DataTable dt = new DataTable();
+            dt = queryCommandDT_StoredProc("[Trans].[GET_BRANCH_SALES_FOR_POSTINGS]");
+            return dt;
+        }
+
+
+        //SALES ITEM NOT YET POSTED
+        public DataTable GET_BRANCH_SALES_NOT_YET_POSTED(string _salesNum)
+        {
+
+            DataTable dt = new DataTable();
+            using (SqlConnection cn = new SqlConnection(CS))
+            {
+                using (SqlCommand cmd = new SqlCommand("[Trans].[GET_BRANCH_SALES_NOT_YET_POSTED]", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@SALESNUM", _salesNum);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dt);
+                }
+            }
+
+            return dt;
+        }
+
+
+        //BRANCH SALE DATA
+        public DataTable GET_BRANCH_SALES_FOR_VOIDING()
+        {
+            DataTable dt = new DataTable();
+            dt = queryCommandDT_StoredProc("[Trans].[GET_BRANCH_SALES_FOR_VOIDING]");
+            return dt;
+            
+    }
+         public DataTable GET_BRANCH_SALES_ITEM_LIST_FOR_VOID(string _salesNum)
+    {
+
+        DataTable dt = new DataTable();
+        using (SqlConnection cn = new SqlConnection(CS))
+        {
+            using (SqlCommand cmd = new SqlCommand("[Trans].[GET_BRANCH_SALES_VOID_ITEM_LIST]", cn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@SALESNUM", _salesNum);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+            }
+        }
+
+        return dt;
+    }
+
+
+        //INSERT BRANCH SALES
+        public void INSERT_BRANCH_SALES(string _salesNum, DateTime _salesDate, string _branchCode, string _itemCode, double _qty)
+        {
+            using (SqlConnection cn = new SqlConnection(CS))
+            {
+                using (SqlCommand cmd = new SqlCommand("[Trans].[INSERT_BRANCH_SALES]", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@SALESNUM", _salesNum);
+                    cmd.Parameters.AddWithValue("@SALESDATE", _salesDate);
+                    cmd.Parameters.AddWithValue("@BRANCHCODE", _branchCode);
+                    cmd.Parameters.AddWithValue("@ITEMCODE", _itemCode);
+                    cmd.Parameters.AddWithValue("@QTY", _qty);
+                    
+                    cn.Open();
+
+                    cmd.ExecuteNonQuery();
+
+                }
+            }
+        }
+
+        public void POST_BRANCH_SALES(string _salesNum)
+        {
+            using (SqlConnection cn = new SqlConnection(CS))
+            {
+                using (SqlCommand cmd = new SqlCommand("[TRANS].[UPDATE_BRANCH_SALES_POSTED]", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@SALESNUM", _salesNum);
+                   
+                    cn.Open();
+
+                    cmd.ExecuteNonQuery();
+
+                }
+            }
+        }
+
+        public void CANCEL_BRANCH_SALES(string _salesNum)
+        {
+            using (SqlConnection cn = new SqlConnection(CS))
+            {
+                using (SqlCommand cmd = new SqlCommand("[Trans].[CANCEL_BRANCH_SALES]", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@SALESNUM", _salesNum);
+
+                    cn.Open();
+
+                    cmd.ExecuteNonQuery();
+
+                }
+            }
+        }
+
+        public void VOID_BRANCH_SALES(string _salesNum, string _remarks)
+        {
+            using (SqlConnection cn = new SqlConnection(CS))
+            {
+                using (SqlCommand cmd = new SqlCommand("[Trans].[UPDATE_BRANCH_SALES_VOID]", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@SALESNUM", _salesNum);
+                    cmd.Parameters.AddWithValue("@REMARKS", _remarks);
+
+                    cn.Open();
+
+                    cmd.ExecuteNonQuery();
+
+                }
+            }
+        }
+
+        public void UPDATE_BEGINNING_STOCK(string _itemCode, string _branchCode, double _quantity)
+        {
+            using (SqlConnection cn = new SqlConnection(CS))
+            {
+                using (SqlCommand cmd = new SqlCommand("[Trans].[UPDATE_BRANCH_BEGINNING_STOCK]", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@BRANCH_ITEMCODE", _itemCode);
+                    cmd.Parameters.AddWithValue("@BRANCHCODE", _branchCode);
+                    cmd.Parameters.AddWithValue("@QUANTITY", _quantity);
+
+                    cn.Open();
+
+                    cmd.ExecuteNonQuery();
+
+                }
+            }
+        }
+
+
+
+        //ADJUSTMENT SECTION
+        public void INSERT_BRANCH_ADJUSTMENT(string _adjNum, string _adjCode, DateTime _adjDate, string _branchCode, string _itemCode, double _qty)
+        {
+            using (SqlConnection cn = new SqlConnection(CS))
+            {
+                using (SqlCommand cmd = new SqlCommand("[Trans].[INSERT_BRANCH_ADJUSTMENT]", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@ADJNUM", _adjNum);
+                    cmd.Parameters.AddWithValue("@ADJCODE", _adjCode);
+                    cmd.Parameters.AddWithValue("@ADJDATE", _adjDate);
+                    cmd.Parameters.AddWithValue("@BRANCHCODE", _branchCode);
+                    cmd.Parameters.AddWithValue("@ITEMCODE", _itemCode);
+                    cmd.Parameters.AddWithValue("@QTY", _qty);
+
+                    cn.Open();
+
+                    cmd.ExecuteNonQuery();
+
+                }
+            }
+        }
+        #endregion
 
         //VERSION 2 04/26/2018 
         public DataTable GET_OPENING_ENDING_STOCK(DateTime _selectedDate)
@@ -79,12 +789,14 @@ namespace DGMU_System
             return dt;
         }
 
+
+
         public DataTable GET_ITEM_RUNNING_STOCK(DateTime _selectedDate)
         {
             DataTable dt = new DataTable();
             using (SqlConnection cn = new SqlConnection(CS))
             {
-                using (SqlCommand cmd = new SqlCommand("[Trans].[GET_ITEM_RUNNING_STOCK]", cn))
+                using (SqlCommand cmd = new SqlCommand("[Inventory].[GET_ITEM_TRAIL]", cn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@SELECTEDDATE", _selectedDate);

@@ -471,11 +471,6 @@ namespace DGMU_System
 
             ddBranchList.Items.Insert(0, new ListItem("SELECT BRANCH"));
 
-          
-
-
-         
-          
         }
 
         protected void lnkUpcomingSched_Click(object sender, EventArgs e)
@@ -771,7 +766,7 @@ namespace DGMU_System
                                 //Update Series Number
                                 //oSystem.UPDATE_SERIES_NUMBER("DR");
 
-                               // DisplayAreaList(Convert.ToDateTime(txtSchedule.Text));
+                               // DisplayAreaList(Convert.ToDateTime(txhttp://localhost:4606/DeliveryReceipt_Final.aspx.cstSchedule.Text));
 
                                 //Display Print Out.
 

@@ -40,6 +40,24 @@ namespace DGMU_System {
         protected global::System.Web.UI.Timer Timer1;
         
         /// <summary>
+        /// txtSelectedDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtSelectedDate;
+        
+        /// <summary>
+        /// lnkReviewStock control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkReviewStock;
+        
+        /// <summary>
         /// lblDeliveryTextTitle control.
         /// </summary>
         /// <remarks>
@@ -67,6 +85,15 @@ namespace DGMU_System {
         protected global::System.Web.UI.WebControls.Label lblFreshTotalStock;
         
         /// <summary>
+        /// imgFreshIn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton imgFreshIn;
+        
+        /// <summary>
         /// lblFreshIn control.
         /// </summary>
         /// <remarks>
@@ -76,6 +103,15 @@ namespace DGMU_System {
         protected global::System.Web.UI.WebControls.Label lblFreshIn;
         
         /// <summary>
+        /// imgFreshOut control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton imgFreshOut;
+        
+        /// <summary>
         /// lblFreshOut control.
         /// </summary>
         /// <remarks>
@@ -83,15 +119,6 @@ namespace DGMU_System {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblFreshOut;
-        
-        /// <summary>
-        /// btnFresh control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnFresh;
         
         /// <summary>
         /// lblLiempoOpening control.
@@ -112,6 +139,15 @@ namespace DGMU_System {
         protected global::System.Web.UI.WebControls.Label lblLiempoTotalStock;
         
         /// <summary>
+        /// imgLiempoIn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton imgLiempoIn;
+        
+        /// <summary>
         /// lblLiempoIn control.
         /// </summary>
         /// <remarks>
@@ -121,6 +157,15 @@ namespace DGMU_System {
         protected global::System.Web.UI.WebControls.Label lblLiempoIn;
         
         /// <summary>
+        /// imgLiempoOut control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton imgLiempoOut;
+        
+        /// <summary>
         /// lblLiempoOut control.
         /// </summary>
         /// <remarks>
@@ -128,15 +173,6 @@ namespace DGMU_System {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblLiempoOut;
-        
-        /// <summary>
-        /// btnLiempo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnLiempo;
         
         /// <summary>
         /// lblAtsara100Opening control.
@@ -157,6 +193,15 @@ namespace DGMU_System {
         protected global::System.Web.UI.WebControls.Label lblAtsara100;
         
         /// <summary>
+        /// imgAtsara100In control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton imgAtsara100In;
+        
+        /// <summary>
         /// lblAtsara100In control.
         /// </summary>
         /// <remarks>
@@ -166,6 +211,15 @@ namespace DGMU_System {
         protected global::System.Web.UI.WebControls.Label lblAtsara100In;
         
         /// <summary>
+        /// imgAtsara100Out control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton imgAtsara100Out;
+        
+        /// <summary>
         /// lblAtsara100Out control.
         /// </summary>
         /// <remarks>
@@ -173,15 +227,6 @@ namespace DGMU_System {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblAtsara100Out;
-        
-        /// <summary>
-        /// btnAtsara100 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnAtsara100;
         
         /// <summary>
         /// lblFrozenOpening control.
@@ -202,6 +247,15 @@ namespace DGMU_System {
         protected global::System.Web.UI.WebControls.Label lblFrozenTotalStock;
         
         /// <summary>
+        /// imgFrozenIn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton imgFrozenIn;
+        
+        /// <summary>
         /// lblFrozenIn control.
         /// </summary>
         /// <remarks>
@@ -211,6 +265,15 @@ namespace DGMU_System {
         protected global::System.Web.UI.WebControls.Label lblFrozenIn;
         
         /// <summary>
+        /// imgFrozenOut control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton imgFrozenOut;
+        
+        /// <summary>
         /// lblFrozenOut control.
         /// </summary>
         /// <remarks>
@@ -218,15 +281,6 @@ namespace DGMU_System {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblFrozenOut;
-        
-        /// <summary>
-        /// btnFrozen control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnFrozen;
         
         /// <summary>
         /// lblLeegOpening control.
@@ -247,6 +301,15 @@ namespace DGMU_System {
         protected global::System.Web.UI.WebControls.Label lblLeeg;
         
         /// <summary>
+        /// imgLeegIn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton imgLeegIn;
+        
+        /// <summary>
         /// lblLeegIn control.
         /// </summary>
         /// <remarks>
@@ -256,6 +319,15 @@ namespace DGMU_System {
         protected global::System.Web.UI.WebControls.Label lblLeegIn;
         
         /// <summary>
+        /// imgLeegOut control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton imgLeegOut;
+        
+        /// <summary>
         /// lblLeegOut control.
         /// </summary>
         /// <remarks>
@@ -263,15 +335,6 @@ namespace DGMU_System {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblLeegOut;
-        
-        /// <summary>
-        /// btnLeeg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnLeeg;
         
         /// <summary>
         /// lblAtsara160Opening control.
@@ -292,6 +355,15 @@ namespace DGMU_System {
         protected global::System.Web.UI.WebControls.Label lblAtsara160;
         
         /// <summary>
+        /// imgAtsara160In control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton imgAtsara160In;
+        
+        /// <summary>
         /// lblAtsara160In control.
         /// </summary>
         /// <remarks>
@@ -299,6 +371,15 @@ namespace DGMU_System {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblAtsara160In;
+        
+        /// <summary>
+        /// imgAtsara160Out control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton imgAtsara160Out;
         
         /// <summary>
         /// lblAtsara160Out control.
@@ -310,13 +391,13 @@ namespace DGMU_System {
         protected global::System.Web.UI.WebControls.Label lblAtsara160Out;
         
         /// <summary>
-        /// btnAtsara160 control.
+        /// gvStorageStockList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnAtsara160;
+        protected global::System.Web.UI.WebControls.GridView gvStorageStockList;
         
         /// <summary>
         /// lblActionTitle control.
@@ -328,13 +409,13 @@ namespace DGMU_System {
         protected global::System.Web.UI.WebControls.Label lblActionTitle;
         
         /// <summary>
-        /// lblItemName control.
+        /// lblItemNameIn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblItemName;
+        protected global::System.Web.UI.WebControls.Label lblItemNameIn;
         
         /// <summary>
         /// panelItemTransaction control.
@@ -346,13 +427,13 @@ namespace DGMU_System {
         protected global::System.Web.UI.WebControls.Panel panelItemTransaction;
         
         /// <summary>
-        /// gvRunningItem control.
+        /// gvRunningItemIn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvRunningItem;
+        protected global::System.Web.UI.WebControls.GridView gvRunningItemIn;
         
         /// <summary>
         /// lnkClose control.
@@ -362,6 +443,51 @@ namespace DGMU_System {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lnkClose;
+        
+        /// <summary>
+        /// lblActionTitleOut control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblActionTitleOut;
+        
+        /// <summary>
+        /// lblItemNameOut control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblItemNameOut;
+        
+        /// <summary>
+        /// panel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel panel1;
+        
+        /// <summary>
+        /// gvRunningItemOut control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvRunningItemOut;
+        
+        /// <summary>
+        /// LinkButton1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
         
         /// <summary>
         /// panelStockMonitoring control.

@@ -65,7 +65,7 @@ namespace DGMU_System
         }
     }
 
-    public DataSet GET_USER_MENU()
+        public DataSet GET_USER_MENU()
     {
         DataSet ds = new DataSet();
         using (SqlConnection cn = new SqlConnection(CS))

@@ -69,14 +69,7 @@
             HasToggleParameterPanelButton="False" />
       </div>
 
-      <%--<div class="col-md-6">
-      <CR:CrystalReportViewer ID="CrystalReportViewer2" runat="server" 
-            AutoDataBind="true" PageZoomFactor="50"
-            HasCrystalLogo="False" ToolPanelView="None" 
-            ToolPanelWidth="200px" Width="1024px" EnableDatabaseLogonPrompt="False" 
-            EnableParameterPrompt="False" HasToggleGroupTreeButton="False" 
-            HasToggleParameterPanelButton="False" ReuseParameterValuesOnRefresh="True" GroupTreeStyle-ShowLines="False" />
-      </div>--%>
+     
     </div>
    
    <!--Message Error -->

@@ -102,6 +102,9 @@
                                                                          </td>
                                                     </tr>
                                                     <tr>
+                                                        <td>Delivered Date:</td><td><asp:Label runat="server" ID="lblDateDelivered"></asp:Label></td>
+                                                    </tr>
+                                                    <tr>
                                                         <td>Item:</td><td><asp:Label runat="server" ID="lblBranchItem"></asp:Label>
                                                             <asp:Label runat="server" ID="lblBranchItemCode" Visible="false"></asp:Label>
                                                                       </td>

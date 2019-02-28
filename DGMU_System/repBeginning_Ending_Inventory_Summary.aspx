@@ -19,35 +19,45 @@
    <div class="row"><!--Main Row -->
        
         <div class="col-md-3">
+            <ul class="list-group">
                 <!-- Start Date-->
-                <div class="input-group input-group-sm">
-                    <span class="input-group-addon alert-danger"><span class="glyphicon glyphicon-calendar">
-                    </span> FROM</span>
-                    <asp:TextBox runat="server" ID="txtStartDate" CssClass="calendarInput form-control"
-                        placeholder="Start Date"></asp:TextBox>
-                </div>
+                <li class="list-group-item">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon alert-danger"><span class="glyphicon glyphicon-calendar">
+                        </span> DATE</span>
+                        <asp:TextBox runat="server" ID="txtStartDate" CssClass="calendarInput form-control"
+                            placeholder="Start Date"></asp:TextBox>
+                    </div>
+                </li>
+                <!-- Storage -->
+                <li class="list-group-item">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon alert-danger"><span class="glyphicon glyphicon-arrow-down">
+                        </span> Storage</span>
+                        <asp:DropDownList runat="server" ID="ddStorage" CssClass="dropdown form-control">
+
+                        </asp:DropDownList>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <asp:LinkButton runat="server" ID="U_Print" CssClass="btn btn-success btn-sm" OnClick="U_Print_Click" 
+                        ><span class="glyphicon glyphicon-print"></span> PREVIEW</asp:LinkButton>
+                </li>
+                </ul>
         </div>
        
-        
-                
-        <div class="col-md-3">
-                <asp:LinkButton runat="server" ID="U_Print" CssClass="btn btn-success btn-sm" OnClick="U_Print_Click" 
-                        ><span class="glyphicon glyphicon-print"></span> PREVIEW</asp:LinkButton>
-        </div>        
                 
         
-   </div>
- <hr />
-    <div class="row">
-
+        <div class="col-md-9">
       <CR:CrystalReportViewer ID="CrystalReportViewer1" runat="server" 
             AutoDataBind="true" PageZoomFactor ="100"
             HasCrystalLogo="False" ToolPanelView="None" 
             ToolPanelWidth="200px" Width="1024px" EnableDatabaseLogonPrompt="False" 
             EnableParameterPrompt="False" HasToggleGroupTreeButton="False" 
             HasToggleParameterPanelButton="False" ReuseParameterValuesOnRefresh="True" GroupTreeStyle-ShowLines="False" />
+       </div>
    
-    </div>
+     </div>
            <!--Message Error -->
                     <div class="modal fade" id="msgErrorModal">
                         <div class="modal-dialog">

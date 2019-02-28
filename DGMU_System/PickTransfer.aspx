@@ -26,7 +26,7 @@
                     
                     <div class="col-md-3 col-md-offset-6">
                         <div class="input-group input-group-sm">
-                            <asp:TextBox runat="server" ID="txtPrintTransaction" CssClass="form-control" placeholder="Re-Print SA#" MaxLength="9"></asp:TextBox>
+                            <asp:TextBox runat="server" ID="txtPrintTransaction" CssClass="form-control" placeholder="Re-Print SA#" MaxLength="11"></asp:TextBox>
                             <span class="input-group-btn">
                                 <asp:LinkButton runat="server" ID="lnkPrintTransaction" CssClass="btn btn-primary btn-sm"
                                     OnClick="lnkPrintTransaction_Click">Print</asp:LinkButton>

@@ -111,6 +111,15 @@ namespace DGMU_System
             return dt;
         }
 
+
+        //For Branch Adjustment 02.28.2019
+        public DataTable GET_BRANCH_ADJUSTMENT_LIST()
+        {
+            DataTable dt = new DataTable();
+            dt = queryCommandDT_StoredProc("[Utility].[GET_BRANCH_ADJUSTMENT_LIST]");
+            return dt;
+        }
+
         public DataTable GET_DRIVER_LIST()
         {
             DataTable dt = new DataTable();

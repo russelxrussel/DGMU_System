@@ -17,7 +17,7 @@ namespace DGMU_System
        
         private void Page_Init(object sender, EventArgs e)
         {
-            oReportDocument.Load(Server.MapPath("~/Reports/DeliveryScheduleList_Reciept_Final.rpt"));
+            oReportDocument.Load(Server.MapPath("~/Reports/DeliveryScheduleList_Reciept_Final_V2.rpt"));
 
             oReportDocument.SetParameterValue("Trip2", Convert.ToBoolean(Session["G_ISTRIP2"]));
             oReportDocument.SetParameterValue("DeliveryDate", Convert.ToDateTime(Session["G_DELIVERYDATE"])); // Set Parameter

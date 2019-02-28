@@ -96,7 +96,7 @@ resize: none;
                  <ul class="dropdown-menu">
                   <%--   <li><a href="login.aspx"><span class="glyphicon glyphicon-off">
                  </span> Log-out </a></li>--%>
-                  <li><asp:LinkButton runat="server" ID="lnkLogOut" OnClick="lnkLogOut_Click">Logout</asp:LinkButton></li>
+                  <li><asp:LinkButton runat="server" ID="lnkLogOut">Logout</asp:LinkButton></li>
                  </ul>
              </li>
          </ul>

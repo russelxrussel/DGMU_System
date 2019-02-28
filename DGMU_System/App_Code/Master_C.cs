@@ -232,6 +232,15 @@ namespace DGMU_System
             return dt;
         }
 
+
+        //BRANCH ITEM
+        public DataTable GET_BRANCH_ITEM_DATA()
+        {
+            DataTable dt = new DataTable();
+            dt = queryCommandDT_StoredProc("[Master].[GET_BRANCH_ITEM_DATA]");
+            return dt;
+        }
+
         //Transaction
         public void INSERT_ITEM_DATA(string _itemCode, string _itemName, string _invUomCode,  double _conversionQty)
         {
@@ -286,6 +295,8 @@ namespace DGMU_System
             dt = queryCommandDT_StoredProc("[Master].[GET_STORAGE_DATA]");
             return dt;
         }
+
+     
 
     }
 

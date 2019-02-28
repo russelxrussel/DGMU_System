@@ -56,12 +56,22 @@ namespace DGMU_System
 
                             if (quantity != 0)
                             {
-                                //    oTransaction.INSERT_STOCK_BRANCH_RETURN(srNum, ddPartnerList.SelectedValue.ToString(), itemCode, quantity, chkCreditToPartner.Checked, Convert.ToDateTime(txtDate.Text), txtRemarks.Text);
+                                
                                 string ptNum = oSystem.GENERATE_SERIES_NUMBER_TRANS("PTI");
+
+                                //For Report Variable
+                               
+
                                 oTransaction.INSERT_PICKUP_TRANSFER(ptNum, ptbNum, ddPartnerList.SelectedValue, itemCode, quantity, txtRemarks.Text, Convert.ToDateTime(txtDate.Text));
                             }
                         }
                     }
+
+                    Session["S_PTNNUM"] = oSystem.GENERATE_SERIES_NUMBER_TRANS("PTI"); ;
+                    PRINT_NOW("repPickUp.aspx");
+
+                    oSystem.UPDATE_SERIES_NUMBER("PTI");
+
                 }
                 else {
                     ErrorOccured("Please input quantity.");
@@ -184,8 +194,8 @@ namespace DGMU_System
 
         protected void lnkPrintTransaction_Click(object sender, EventArgs e)
         {
-            Session["G_SANUM"] = txtPrintTransaction.Text;
-            PRINT_NOW("repStockAdjustment.aspx");
+            Session["S_PTNNUM"] = txtPrintTransaction.Text;
+            PRINT_NOW("repPickUp.aspx");
 
         }
 

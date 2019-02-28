@@ -164,6 +164,7 @@ namespace DGMU_System
             foreach(DataRowView dvr in dv)
                 {
                     lblPartnerName.Text = dvr.Row["PartnerName"].ToString();
+                    lblDateDelivered.Text = string.Format("{0:d}", dvr.Row["DateTrans"]);
                     lblBranchItem.Text = dvr.Row["Branch_ItemName"].ToString();
                     lblQuantity.Text = dvr.Row["TotalQty"].ToString();
                     lblDistributed.Text = dvr.Row["DistributedQty"].ToString();
